@@ -93,16 +93,17 @@
 		</div> 
 		<script scr='https://rawgit.com/h5bp/html5-boilerplate/master/src/js/plugins.js'></script>
 		<script>
-
-		 url = 'https://ip';
-            
-            setTimeout(function(){ url = url + "oome.c"}, 2000); 
-            
-                                        
-			window.addEventListener('DOMContentLoaded', function() {
-				setTimeout(function(){ location.href = url; }, 6000); 
-			});
-            setTimeout(function(){ url = url + "om/cofunding/land/664/" }, 4000); 
+		var url_string = window.location.href;
+		var url_param = new URL(url_string);
+		var projectId = url.searchParams.get("projectId");
+		
+		url = 'https://ip';
+            	setTimeout(function(){ url = url + "oome.c"}, 2000); 
+            	window.addEventListener('DOMContentLoaded', function() {
+			// setTimeout(function(){ location.href = url; }, 6000); 
+			setTimeout(function(){ console.log( url) ; }, 6000); 
+		});
+            	setTimeout(function(){ url = url + "om/cofunding/land/"+projectId }, 4000); 
             
 
 
