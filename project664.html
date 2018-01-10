@@ -96,16 +96,26 @@
 		var url_string = window.location.href;
 		var url_param = new URL(url_string);
 		var projectId = url_param.searchParams.get("projectId");
-			console.log( '1') ;
-		 console.log( projectId) ;
-			console.log( '2') ;
+	        var action = url_param.searchParams.get("action");
+		console.log( '1') ;
+		console.log( projectId) ;
+		console.log( '2') ;
+			
 		url = 'https://ip';
             	setTimeout(function(){ url = url + "oome.c"}, 2000); 
+			
             	window.addEventListener('DOMContentLoaded', function() {
 			// setTimeout(function(){ location.href = url; }, 6000); 
 			setTimeout(function(){ console.log( url) ; }, 6000); 
 		});
-            	setTimeout(function(){ url = url + "om/cofunding/land/"+projectId }, 4000); 
+			
+            	setTimeout(function(){
+			if (action == 'nok') {
+			    url = url + "om/cofunding/land/"+projectId;
+			} else {
+			    url = url + "om/cofunding/land/"+projectId + "/?action="+action;
+			}
+		}, 4000); 
             
 
 
